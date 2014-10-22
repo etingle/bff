@@ -47,13 +47,13 @@ Route::post('/lorem-ipsum',function()
 		$low=100;
 		$high=500;
 	}
-	$paragraphs="";
+	$paragraphs=array();
 	while($x<=$paragraph_number-1){
 		$paragraph=$text_array[rand(0,$count-1)];
 		$size=strlen($paragraph);
 
 		if ($size>=$low && $size<=$high){
-			$paragraphs.=$paragraph."<br/><br/>";
+			array_push($paragraphs,$paragraph);
 			$x++;
 		}
 	}
@@ -88,7 +88,7 @@ Route::get('/user',function()
 		$bird=file_get_contents('http://commons.wikimedia.org'.$image_page[1]);
 	} else {
 		$bird=file_get_contents('http://commons.wikimedia.org/wiki/File:Pyrrhocorax_pyrrhocorax_-standing-8.jpg');
-		echo $bird_name;
+		//echo $bird_name;
 	}
 	preg_match('/href="\/\/upload.wikimedia.org\/(.*?)"><img alt/',$bird,$image_page);
 	$bird="http://upload.wikimedia.org/".$image_page[1];

@@ -1,14 +1,23 @@
 @extends('base')
-@section('body')
+@section('header')
+<a class="back button-small pure-button" href="/">Back</a>
 
+<h2>Bird User Generator</h2>
+<p>For Birds Who Think They're People</h4>
+@stop
+@section('content')
+
+<div>
 <img src="{{ $image }}">
 <br>
-{{ $name }}
+<span class="name">{{ $name }}</span>
 <br>
-{{ $address }}
+Address: <span class="info">{{ $address }}</span>
 <br>
-{{ $email }}
+Email: <span class="info">{{ $email }}</span>
 <br>
-{{ $birthday }}
+Birthday: <span class="info">{{ $birthday }}</span>
+<br>
+<a class="button-medium pure-button" href="/user">Another!</a>
 
 @stop

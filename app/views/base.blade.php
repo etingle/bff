@@ -11,6 +11,13 @@
     {{ HTML::style('styles/p3.css'); }}
 </head>
 <body>
-    @yield('body')
+	<div id="main">
+		<div class="header">
+		@yield('header')
+	</div>
+</div>
+<div class="content">
+    @yield('content')
+</div>
 </body>
 </html>
