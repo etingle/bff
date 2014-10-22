@@ -25,6 +25,8 @@ Route::get('/lorem-ipsum',function()
 
 Route::post('/lorem-ipsum',function()
 {
+
+
 	$text=File::get(storage_path()."/principia.txt");
 	$paragraph_number=Input::get('paragraph_number','1');
 	$length=Input::get('length','short');
@@ -58,6 +60,7 @@ Route::post('/lorem-ipsum',function()
 		}
 	}
 
+	Input::flashOnly('paragraph_number','length');
 	return View::make('lorem-ipsum')
 		->with('paragraphs',$paragraphs);
 	});
