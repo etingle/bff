@@ -6,12 +6,11 @@ Bird User Generator
 <a class="back button-small pure-button" href="/">Back</a>
 
 <h2>Bird User Generator</h2>
-<p>For Birds Who Think They're People</h4>
+<p>For Birds Who Think They're People</p>
 @stop
 @section('content')
 
-<div>
-<img src="{{ $image }}">
+<img src="{{ $image }}" alt="bird picture">
 <br>
 <span class="name">{{ $name }}</span>
 <br>
