@@ -24,9 +24,9 @@ Principia Generator
     ), '1') }}
 <br><br>
 	{{ Form::label('length','Paragraph Length') }}
-	{{ Form::radio('length','short',true) }} Short
-	{{ Form::radio('length','medium') }} Medium
-	{{ Form::radio('length','long') }} Long
+	{{ Form::radio('length','short',true,array('id'=>'short')) }} Short
+	{{ Form::radio('length','medium',false,array('id'=>'medium')) }} Medium
+	{{ Form::radio('length','long',false,array('id'=>'long')) }} Long
 <br><br>
 	{{ Form::submit('Search',array('class'=>'pure-button')); }}
 
