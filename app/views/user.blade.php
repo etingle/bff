@@ -1,4 +1,7 @@
 @extends('base')
+@section('title')
+Bird User Generator
+@stop
 @section('header')
 <a class="back button-small pure-button" href="/">Back</a>
 
