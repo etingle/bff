@@ -23,7 +23,7 @@ Principia Generator
         '5'     => '5'
     ), '1') }}
 <br><br>
-	{{ Form::label('length','Paragraph Length') }}
+	{{ Form::label('length','Paragraph Length:') }}
 	{{ Form::radio('length','short',true,array('id'=>'short')) }} Short
 	{{ Form::radio('length','medium',false,array('id'=>'medium')) }} Medium
 	{{ Form::radio('length','long',false,array('id'=>'long')) }} Long
