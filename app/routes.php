@@ -90,7 +90,12 @@ Route::get('/user',function()
 	
 	preg_match('/center"><a href="(.*?)" class="image">/',$bird,$image_page);
 	if (isset($image_page[1])){
-		$bird=file_get_contents('http://commons.wikimedia.org'.$image_page[1]);
+		try{
+			$bird=file_get_contents('http://commons.wikimedia.org'.$image_page[1]);
+		} catch (Exception $e)
+		{
+			$bird=file_get_contents('http://commons.wikimedia.org/wiki/File:Pyrrhocorax_pyrrhocorax_-standing-8.jpg');
+		}
 	} else {
 		$bird=file_get_contents('http://commons.wikimedia.org/wiki/File:Pyrrhocorax_pyrrhocorax_-standing-8.jpg');
 		//echo $bird_name;
