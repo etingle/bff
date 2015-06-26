@@ -88,7 +88,9 @@ Route::get('/user',function()
 	$bird_email=end($bird_email);
 	$bird_email=strtolower($bird_email);
 	
+
 	preg_match('/center"><a href="(.*?)" class="image">/',$bird,$image_page);
+	#print_r($image_page);
 	if (isset($image_page[1])){
 		try{
 			$bird=file_get_contents('http://commons.wikimedia.org'.$image_page[1]);
@@ -100,7 +102,10 @@ Route::get('/user',function()
 		$bird=file_get_contents('http://commons.wikimedia.org/wiki/File:Pyrrhocorax_pyrrhocorax_-standing-8.jpg');
 		//echo $bird_name;
 	}
-	preg_match('/href="\/\/upload.wikimedia.org\/(.*?)"><img alt/',$bird,$image_page);
+	preg_match('/href="https:\/\/upload.wikimedia.org\/(.*?)"><img alt/',$bird,$image_page);
+
+
+	#$bird=http://commons.wikimedia.org/wiki/File:Pyrrhocorax_pyrrhocorax_-standing-8.jpg
 	$bird="http://upload.wikimedia.org/".$image_page[1];
 
 	$faker = Faker\Factory::create();
